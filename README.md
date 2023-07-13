@@ -19,7 +19,7 @@ This is a project from a TypeScript course, that I made while learning TypeScrip
 - Semantic HTML5 markup
 - CSS custom properties
 - JavaScript
-- Typescript
+- TypeScript
 
 ### Useful resources
 - [Jak zacząć programować - kurs TypeScript](https://www.youtube.com/watch?v=5CBZ6DymX0Y)
