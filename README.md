@@ -1,5 +1,5 @@
 # To do list - Jak zacząć programować
-This is a project made 
+This is a project from a TypeScript course, that I made while learning TypeScript for the first time.
 
 ## Table of contents
 - [Overview](#overview)
@@ -12,7 +12,7 @@ This is a project made
 
 ## Overview
 ### Links
-- Link to the website: []()
+- Link to the website: [https://ahuramagda.github.io/To-do-list-TS/](https://ahuramagda.github.io/To-do-list-TS/)
 
 ## My process
 ### Built with
@@ -26,4 +26,4 @@ This is a project made
 
 ## Author
 - Github (https://github.com/AhuraMagda)
-# To-do-list-TS
+
