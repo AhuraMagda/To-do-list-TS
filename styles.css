@@ -29,7 +29,17 @@ body {
     );
     border-radius: 4px;
     display: inline-block;
-    padding: 16px;
+    padding: 70px;
+}
+
+h1 {
+    padding-bottom: 30px;
+    text-align: center;
+}
+
+form {
+    padding: 30px;
+    border: 1px solid black;
 }
 
 input[type="text"] {
@@ -72,10 +82,14 @@ button:hover {
 }
 
 .important {
-    color: darkblue;
-    list-style: circle;
+    color: rgb(197, 8, 8);
 }
 
 .coding {
     color: darkgoldenrod;
+}
+
+h2 {
+    padding: 20px 0px 20px 0px;
+    text-align: center;
 }

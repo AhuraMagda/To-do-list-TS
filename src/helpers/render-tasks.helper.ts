@@ -9,13 +9,13 @@ export const render = (tasks: Task[], tasksContainerElement: HTMLElement) => {
         }
         const id: string = `task-${index}`;
 
-        const labelElement: HTMLLabelElement = document.createElement("label")
-        labelElement.innerHTML = task.title;
+        const labelElement: HTMLLabelElement = document.createElement("label");
+        labelElement.innerHTML = task.name;
         labelElement.setAttribute("for", id);
 
-        const checkboxElement: HTMLInputElement = document.createElement("input")
+        const checkboxElement: HTMLInputElement = document.createElement("input");
         checkboxElement.type = "checkbox";
-        checkboxElement.name = task.title;
+        checkboxElement.name = task.name;
         checkboxElement.id = id;
         checkboxElement.checked = task.done;
         checkboxElement.addEventListener("change", () => {
@@ -28,3 +28,4 @@ export const render = (tasks: Task[], tasksContainerElement: HTMLElement) => {
         tasksContainerElement.appendChild(taskElement);
     })
 }
+

@@ -1,3 +1,4 @@
+
 import { render as renderCategories } from "./helpers/redner-categories.helper.js";
 import { render } from "./helpers/render-tasks.helper.js";
 import { Task, Category } from "./types/types.js";
@@ -13,14 +14,16 @@ const categories: Category[] = [
 ];
 
 const tasks: Task[] = [
-    {title: "learn TS", done: false, category: Category.IMPORTANT}, {title: "do qualtrics project", done: false}, {title: "drink water", done: true}
+    new Task("learn TS", false, Category.IMPORTANT),
+    new Task("do qualtrics project", false, Category.CODING),
+    new Task("drink water", true),
 ]
 
 const updateSelectedCategory = (newCategory: Category) => {
     selectedCategory = newCategory;
 }
 
-const addTask = (Task) => {
+const addTask = (Task: Task) => {
     tasks.push(Task)
 }
 
@@ -29,10 +32,15 @@ const taskButton: HTMLButtonElement = document.querySelector("button");
 
 taskButton.addEventListener("click", (event: Event) => {
     event.preventDefault();
-    addTask({title: taskNameInputElement.value, done: false, category: selectedCategory});
+    const newTask = new Task(taskNameInputElement.value, false, selectedCategory);
+    addTask(newTask);
+    newTask.logCreationDate("!!!")
     render(tasks, tasksContainerElement)
 })
 
+const taskInstance = new Task("tidy the room", true);
+addTask(taskInstance)
 
 renderCategories(categories, categoriesUl, updateSelectedCategory);
 render(tasks, tasksContainerElement);
+

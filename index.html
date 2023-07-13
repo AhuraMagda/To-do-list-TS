@@ -8,15 +8,19 @@
         <link rel="stylesheet" href="styles.css" />
     </head>
     <body>
-        <form class="container" autocomplete="off">
-            <label for="name">Task:</label>
-            <input type="text" id="name" />
-            <ul class="categories">
-            </ul>
-            <button>Add</button>
-            <p>Todo:</p>
+        <div class="container">
+            <h1>TO DO LIST</h1>
+            <form autocomplete="off">
+                <label for="name">Add new task:</label>
+                <input type="text" id="name" />
+                <ul class="categories">
+                </ul>
+                <button>Add</button>
+            </form>
+            <h2>All the tasks:</h2>
             <ul class="tasks"></ul>
-        </form>
+        </div>
+
         <script type="module" src="dist/app.js"></script>
     </body>
 </html>

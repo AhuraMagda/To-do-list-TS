@@ -1,19 +1,24 @@
 import { Category } from "../types/types.js";
 export const render = (categories, categoriesUl, inputChangeCallback) => {
     const handleCategoryChange = (category) => {
-        if (category === Category.GENERAL) {
-            document.body.style.background = "#1ce";
+        const button = document.querySelector("button");
+        let buttonTextColor;
+        switch (category) {
+            case Category.GENERAL:
+                buttonTextColor = "black";
+                break;
+            case Category.CODING:
+                buttonTextColor = "darkgoldenrod";
+                break;
+            case Category.IMPORTANT:
+                buttonTextColor = "rgb(197, 8, 8)";
+                break;
+            default:
+                const never = category;
+                console.log(never);
+                break;
         }
-        else if (category === Category.CODING) {
-            document.body.style.background = "white";
-        }
-        else if (category === Category.IMPORTANT) {
-            document.body.style.background = "red";
-        }
-        else {
-            const never = category;
-            console.log(never);
-        }
+        button.style.color = buttonTextColor;
     };
     categories.forEach(category => {
         const categoryInput = document.createElement("input");
@@ -21,10 +26,14 @@ export const render = (categories, categoriesUl, inputChangeCallback) => {
         categoryInput.name = "category";
         categoryInput.value = category;
         categoryInput.id = `category-${category}`;
+        categoryInput.style.color = "red";
         categoryInput.addEventListener("change", () => { inputChangeCallback(category); handleCategoryChange(category); });
         const categoryLabel = document.createElement("label");
         categoryLabel.setAttribute("for", `category-${category}`);
         categoryLabel.innerHTML = category;
+        categoryLabel.style.color = category === Category.GENERAL && "black";
+        categoryLabel.style.color = category === Category.CODING && "darkgoldenrod";
+        categoryLabel.style.color = category === Category.IMPORTANT && "rgb(197, 8, 8)";
         const categoryLi = document.createElement("li");
         categoryLi.appendChild(categoryInput);
         categoryLi.appendChild(categoryLabel);

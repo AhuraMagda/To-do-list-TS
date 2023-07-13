@@ -1,6 +1,6 @@
 import { render as renderCategories } from "./helpers/redner-categories.helper.js";
 import { render } from "./helpers/render-tasks.helper.js";
-import { Category } from "./types/types.js";
+import { Task, Category } from "./types/types.js";
 const tasksContainerElement = document.querySelector(".tasks");
 const categoriesUl = document.querySelector(".categories");
 let selectedCategory;
@@ -10,7 +10,9 @@ const categories = [
     Category.IMPORTANT,
 ];
 const tasks = [
-    { title: "learn TS", done: false, category: Category.IMPORTANT }, { title: "do qualtrics project", done: false }, { title: "drink water", done: true }
+    new Task("learn TS", false, Category.IMPORTANT),
+    new Task("do qualtrics project", false, Category.CODING),
+    new Task("drink water", true),
 ];
 const updateSelectedCategory = (newCategory) => {
     selectedCategory = newCategory;
@@ -22,8 +24,12 @@ const taskNameInputElement = document.querySelector("#name");
 const taskButton = document.querySelector("button");
 taskButton.addEventListener("click", (event) => {
     event.preventDefault();
-    addTask({ title: taskNameInputElement.value, done: false, category: selectedCategory });
+    const newTask = new Task(taskNameInputElement.value, false, selectedCategory);
+    addTask(newTask);
+    newTask.logCreationDate("!!!");
     render(tasks, tasksContainerElement);
 });
+const taskInstance = new Task("tidy the room", true);
+addTask(taskInstance);
 renderCategories(categories, categoriesUl, updateSelectedCategory);
 render(tasks, tasksContainerElement);
