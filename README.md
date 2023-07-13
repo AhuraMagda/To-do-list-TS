@@ -22,7 +22,7 @@ This is a project made
 - Typescript
 
 ### Useful resources
-- [Jak zacząć programować - kurs TypeScript]([https://elfsight.com/](https://www.youtube.com/watch?v=5CBZ6DymX0Y))
+- [Jak zacząć programować - kurs TypeScript](https://www.youtube.com/watch?v=5CBZ6DymX0Y)
 
 ## Author
 - Github (https://github.com/AhuraMagda)
