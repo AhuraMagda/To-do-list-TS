@@ -1,5 +1,5 @@
 # To do list - Jak zacząć programować
-This is a project from a TypeScript course, that I made while learning TypeScript for the first time.
+This is a project from a TypeScript course, that I made while learning.
 
 ## Table of contents
 - [Overview](#overview)
